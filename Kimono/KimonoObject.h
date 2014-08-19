@@ -10,7 +10,7 @@
 
 @interface KimonoObject : NSObject
 
-@property(nonatomic, strong) NSString *APIID;
+@property(nonatomic, strong) NSString *APIId;
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSString *targeturl;
 @property(nonatomic, strong) NSString *frequency;

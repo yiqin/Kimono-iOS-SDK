@@ -49,4 +49,29 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *))success failure:(void (^)(NSError *))failure
+{
+    NSMutableString *path = [[NSMutableString alloc]init];
+    
+    [path appendString:kimonoURL];
+    [path appendString:@"/kimonoapis/"];
+    [path appendString:self.APIID];
+    [path appendString:@"?apikey="];
+    [path appendString:self.apikey];
+    
+	AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+	operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"SUCCESS");
+        success(responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+		NSLog(@"FAILED");
+        failure(error);
+        
+    }];
+}
+
 @end

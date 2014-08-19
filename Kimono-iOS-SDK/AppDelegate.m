@@ -16,7 +16,7 @@
     // Override point for customization after application launch.
     
     [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
-    
+        
     
     KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIID:@"2wwctra6"];
     
@@ -29,6 +29,13 @@
         
     }];
     
+    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(NSString *str) {
+        
+        NSLog(@"SUCCESS - JSON: %@", str);
+        
+    } failure:^(NSError *error) {
+         
+    }];
     
     
     return YES;

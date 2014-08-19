@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kimono-iOS-SDK/AppDelegate.m"
-            timestampString = "430109941.524584"
+            timestampString = "430118364.66287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
             <Locations>
@@ -25,11 +25,11 @@
                   symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke"
                   moduleName = "Kimono-iOS-SDK"
                   urlString = "file:///Users/yiqin/Desktop/Kimono-iOS-SDK/Kimono-iOS-SDK/AppDelegate.m"
-                  timestampString = "430115824.989807"
+                  timestampString = "430118988.866838"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "79">
                </Location>
                <Location
@@ -39,11 +39,11 @@
                   symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_2"
                   moduleName = "Kimono-iOS-SDK"
                   urlString = "file:///Users/yiqin/Desktop/Kimono-iOS-SDK/Kimono-iOS-SDK/AppDelegate.m"
-                  timestampString = "430115824.990153"
+                  timestampString = "430118988.867168"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "50">
                </Location>
             </Locations>
@@ -56,7 +56,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kimono-iOS-SDK/AppDelegate.m"
-            timestampString = "430109942.234686"
+            timestampString = "430118364.66287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"

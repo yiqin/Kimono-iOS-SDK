@@ -36,4 +36,12 @@
  */
 - (void)sendRequestCompletionBlockWithSuccess:(void (^)(NSString *str))success failure:(void (^)(NSError *error))failure;
 
+/*!
+ Retrieve an API
+ Returns an API object matching a specific API id
+ @param success Do something when it success.
+ @param failure Failure
+ */
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *str))success failure:(void (^)(NSError *error))failure;
+
 @end
