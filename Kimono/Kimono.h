@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KimonoObject.h"
+
 
 @interface Kimono : NSObject
+
+/*!
+ Sets the applicationId and clientKey of your application.
+ @param KimonoAPIKey The application id for your Parse application.
+ */
++ (void)setAPIKey:(NSString *) KimonoAPIKey;
++ (NSString *)getAPIKey;
 
 @end

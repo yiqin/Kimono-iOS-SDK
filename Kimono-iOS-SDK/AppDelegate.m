@@ -7,12 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "Kimono.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
+    
+    
+    KimonoObject *kimonoObject = [[KimonoObject alloc] initWithAPIID:@"2wwctra6"];
+    
+    [kimonoObject sendRequestCompletionBlockWithSuccess:^(NSString *str) {
+        
+        NSLog(@"SUCCESS - JSON: %@", str);
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
+    
     return YES;
 }
 							

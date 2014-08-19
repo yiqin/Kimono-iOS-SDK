@@ -8,6 +8,18 @@
 
 #import "Kimono.h"
 
+static NSString *KimonoAPIKey;
+
 @implementation Kimono
+
++ (void)setAPIKey:(NSString *)APIKey
+{
+    KimonoAPIKey = APIKey;
+}
+
++ (NSString *)getAPIKey
+{
+    return KimonoAPIKey;
+}
 
 @end
