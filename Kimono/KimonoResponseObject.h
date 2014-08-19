@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KimonoObject : NSObject
+@interface KimonoResponseObject : NSObject
 
 @property(nonatomic, strong) NSString *APIId;
 @property(nonatomic, strong) NSString *name;

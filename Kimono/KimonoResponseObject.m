@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 yiqin. All rights reserved.
 //
 
-#import "KimonoObject.h"
+#import "KimonoResponseObject.h"
 
-@implementation KimonoObject
+@implementation KimonoResponseObject
 
 - (id)initWithJSON:(NSDictionary *)JSON
 {

@@ -20,6 +20,8 @@
     
     KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIID:@"2wwctra6"];
     
+    
+    
     [kimonoOperation sendRequestCompletionBlockWithSuccess:^(NSString *str) {
         
         NSLog(@"SUCCESS - JSON: %@", str);
@@ -28,6 +30,8 @@
     } failure:^(NSError *error) {
         
     }];
+    
+    
     
     [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(NSString *str) {
         

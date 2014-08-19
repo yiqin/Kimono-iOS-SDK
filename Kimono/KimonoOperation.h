@@ -7,6 +7,7 @@
 //
 
 #import "Kimono.h"
+#import "KimonoResponseObject.h"
 
 @interface KimonoOperation : NSObject
 
@@ -22,6 +23,9 @@
  */
 @property (nonatomic, strong) NSString *apikey;
 
+
+@property (nonatomic, strong) KimonoObject *responseObject;
+
 /*!
  Sets the applicationId and clientKey of your application.
  @param applicationId The application id for your Parse application.
@@ -34,14 +38,34 @@
  @param success Do something when it success.
  @param failure Failure
  */
-- (void)sendRequestCompletionBlockWithSuccess:(void (^)(NSString *str))success failure:(void (^)(NSError *error))failure;
+- (void)sendRequestCompletionBlockWithSuccess:(void (^)(NSString *str))success
+                                      failure:(void (^)(NSError *error))failure;
+
 
 /*!
- Retrieve an API
- Returns an API object matching a specific API id
- @param success Do something when it success.
+ Send an API request
+ @param success Returns an Kimono object for the API that matches a specific id.
  @param failure Failure
  */
-- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *str))success failure:(void (^)(NSError *error))failure;
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *str))success
+                                      failure:(void (^)(NSError *error))failure;
+
+
+
+- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(NSString *str))success
+                                      failure:(void (^)(NSError *error))failure;
+
+
+
+- (void)setTargeturl:(NSString *)targeturl
+             success:(void (^)(NSString *str))success
+             failure:(void (^)(NSError *error))failure;
+
+
+- (void)setFrequency:(NSString *)frequency
+             success:(void (^)(NSString *str))success
+             failure:(void (^)(NSError *error))failure;
+
+
 
 @end
