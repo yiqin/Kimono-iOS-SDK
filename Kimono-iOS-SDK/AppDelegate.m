@@ -18,9 +18,9 @@
     [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
     
     
-    KimonoObject *kimonoObject = [[KimonoObject alloc] initWithAPIID:@"2wwctra6"];
+    KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIID:@"2wwctra6"];
     
-    [kimonoObject sendRequestCompletionBlockWithSuccess:^(NSString *str) {
+    [kimonoOperation sendRequestCompletionBlockWithSuccess:^(NSString *str) {
         
         NSLog(@"SUCCESS - JSON: %@", str);
         

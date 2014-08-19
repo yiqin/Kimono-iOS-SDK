@@ -8,7 +8,7 @@
 
 #import "Kimono.h"
 
-@interface KimonoObject : NSObject
+@interface KimonoOperation : NSObject
 
 // @property (nonatomic, strong) NSString *KimonoURL;
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KimonoObject.h"
+#import "KimonoOperation.h"
 
 
 @interface Kimono : NSObject

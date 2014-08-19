@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 yiqin. All rights reserved.
 //
 
-#import "KimonoObject.h"
+#import "KimonoOperation.h"
 #import "AFNetworking.h"
 
 // ????
 static NSString * const kimonoURL = @"https://www.kimonolabs.com";
 
-@implementation KimonoObject
+@implementation KimonoOperation
 
 - (id)initWithAPIID:(NSString *)APIID
 {
