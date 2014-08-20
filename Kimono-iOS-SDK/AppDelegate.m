@@ -18,14 +18,13 @@
     [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
         
     
-    KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIID:@"2wwctra6"];
+    KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
     
     
     
-    [kimonoOperation getResponseCompletionBlockWithSuccess:^(NSString *str) {
-        
-        NSLog(@"SUCCESS - JSON: %@", str);
-        
+    [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
+        NSLog(@"Success - Get Response");
+        // NSLog(@"New Data %u", kimonoResponseObject.newdata);
         
     } failure:^(NSError *error) {
         
@@ -33,15 +32,21 @@
     
     
     
-    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(NSString *str) {
-        
-        NSLog(@"SUCCESS - JSON: %@", str);
+    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
+        NSLog(@"Success - Retrieve API");
+        // NSLog(@"Success cr: %u", kimonoResponseObject.crawlingenabled);
         
     } failure:^(NSError *error) {
-         
+        
     }];
     
     
+    
+    
+    
+    
+    
+     
     return YES;
 }
 							

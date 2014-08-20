@@ -14,9 +14,9 @@
 // @property (nonatomic, strong) NSString *KimonoURL;
 
 /*!
- Kimono API_ID
+ Kimono apiid
  */
-@property (nonatomic, strong) NSString *APIID;
+@property (nonatomic, strong) NSString *apiid;
 
 /*!
  Kimono apikey
@@ -31,14 +31,14 @@
  @param applicationId The application id for your Parse application.
  @param clientKey The client key for your Parse application.
  */
-- (instancetype)initWithAPIID:(NSString *)APIID;
+- (instancetype)initWithAPIId:(NSString *)apiid;
 
 /*!
  Sends an API request and gets a Kimono API response.
  @param success Do something when it success.
  @param failure Failure
  */
-- (void)getResponseCompletionBlockWithSuccess:(void (^)(NSString *str))success
+- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
                                       failure:(void (^)(NSError *error))failure;
 
 
@@ -47,23 +47,23 @@
  @param success Returns an Kimono object for the API that matches a specific id.
  @param failure Failure
  */
-- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *str))success
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
                                       failure:(void (^)(NSError *error))failure;
 
 
 
-- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(NSString *str))success
+- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
                                       failure:(void (^)(NSError *error))failure;
 
 
 
 - (void)setTargeturl:(NSString *)targeturl
-             success:(void (^)(NSString *str))success
+             success:(void (^)(KimonoResponseObject *kimonoResponseObject))success
              failure:(void (^)(NSError *error))failure;
 
 
 - (void)setFrequency:(NSString *)frequency
-             success:(void (^)(NSString *str))success
+             success:(void (^)(KimonoResponseObject *kimonoResponseObject))success
              failure:(void (^)(NSError *error))failure;
 
 

@@ -9,28 +9,27 @@
 #import "KimonoOperation.h"
 #import "AFNetworking.h"
 
-// ????
 static NSString * const kimonoURL = @"https://www.kimonolabs.com";
 
 @implementation KimonoOperation
 
-- (instancetype)initWithAPIID:(NSString *)APIID
+- (instancetype)initWithAPIId:(NSString *)apiid
 {
     self = [super init];
     if (self) {
-        self.APIID = APIID;
+        self.apiid = apiid;
         self.apikey = [Kimono getAPIKey];
     }
     return self;
 }
 
-- (void)getResponseCompletionBlockWithSuccess:(void (^)(NSString *))success failure:(void (^)(NSError *))failure
+- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoResponseObject *))success failure:(void (^)(NSError *))failure
 {
-    NSMutableString *path = [[NSMutableString alloc]init];
+    NSMutableString *path = [[NSMutableString alloc] init];
     
     [path appendString:kimonoURL];
     [path appendString:@"/api/"];
-    [path appendString:self.APIID];
+    [path appendString:self.apiid];
     [path appendString:@"?apikey="];
     [path appendString:self.apikey];
     
@@ -39,23 +38,24 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"SUCCESS");
-        success(responseObject);
+        
+        KimonoResponseObject *kimonoResponseObject = [[KimonoResponseObject alloc] initWithJSON:responseObject];
+        success(kimonoResponseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		NSLog(@"FAILED");
+		
         failure(error);
         
     }];
 }
 
-- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(NSString *))success failure:(void (^)(NSError *))failure
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoResponseObject *))success failure:(void (^)(NSError *))failure
 {
-    NSMutableString *path = [[NSMutableString alloc]init];
+    NSMutableString *path = [[NSMutableString alloc] init];
     
     [path appendString:kimonoURL];
     [path appendString:@"/kimonoapis/"];
-    [path appendString:self.APIID];
+    [path appendString:self.apiid];
     [path appendString:@"?apikey="];
     [path appendString:self.apikey];
     
@@ -64,11 +64,12 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"SUCCESS");
-        success(responseObject);
+        
+        KimonoResponseObject *kimonoResponseObject = [[KimonoResponseObject alloc] initWithJSON:responseObject];
+        success(kimonoResponseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		NSLog(@"FAILED");
+		
         failure(error);
         
     }];
