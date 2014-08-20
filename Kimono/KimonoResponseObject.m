@@ -10,7 +10,7 @@
 
 @implementation KimonoResponseObject
 
-- (id)initWithJSON:(NSDictionary *)JSON
+- (instancetype)initWithJSON:(NSDictionary *)JSON
 {
     self = [super init];
     if (self) {

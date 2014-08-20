@@ -22,7 +22,7 @@
     
     
     
-    [kimonoOperation sendRequestCompletionBlockWithSuccess:^(NSString *str) {
+    [kimonoOperation getResponseCompletionBlockWithSuccess:^(NSString *str) {
         
         NSLog(@"SUCCESS - JSON: %@", str);
         

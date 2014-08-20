@@ -14,7 +14,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
 
 @implementation KimonoOperation
 
-- (id)initWithAPIID:(NSString *)APIID
+- (instancetype)initWithAPIID:(NSString *)APIID
 {
     self = [super init];
     if (self) {
@@ -24,7 +24,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     return self;
 }
 
-- (void)sendRequestCompletionBlockWithSuccess:(void (^)(NSString *))success failure:(void (^)(NSError *))failure
+- (void)getResponseCompletionBlockWithSuccess:(void (^)(NSString *))success failure:(void (^)(NSError *))failure
 {
     NSMutableString *path = [[NSMutableString alloc]init];
     
