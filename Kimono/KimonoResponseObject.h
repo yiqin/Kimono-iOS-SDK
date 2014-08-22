@@ -40,6 +40,6 @@
 @property(nonatomic, strong) NSDictionary *results;
 
 
-- (id)initWithJSON:(NSDictionary *)JSON;
+- (instancetype)initWithJSON:(NSDictionary *)JSON;
 
 @end

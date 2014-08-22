@@ -33,6 +33,7 @@
 		8DD49D7919A1B06800BAD8AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD49D5B19A1B06800BAD8AF /* UIKit.framework */; };
 		8DD49D8119A1B06800BAD8AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DD49D7F19A1B06800BAD8AF /* InfoPlist.strings */; };
 		8DD49D8319A1B06800BAD8AF /* Kimono_iOS_SDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD49D8219A1B06800BAD8AF /* Kimono_iOS_SDKTests.m */; };
+		8DD4F52019A6CB74001B8351 /* KimonoResponseQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		8DD49D7E19A1B06800BAD8AF /* Kimono-iOS-SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kimono-iOS-SDKTests-Info.plist"; sourceTree = "<group>"; };
 		8DD49D8019A1B06800BAD8AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8DD49D8219A1B06800BAD8AF /* Kimono_iOS_SDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kimono_iOS_SDKTests.m; sourceTree = "<group>"; };
+		8DD4F51E19A6CB74001B8351 /* KimonoResponseQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoResponseQuery.h; sourceTree = "<group>"; };
+		8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoResponseQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				8D22F4BB19A2DB4600BE9913 /* KimonoOperation.m */,
 				8D22F4BD19A30DF600BE9913 /* KimonoResponseObject.h */,
 				8D22F4BE19A30DF600BE9913 /* KimonoResponseObject.m */,
+				8DD4F51E19A6CB74001B8351 /* KimonoResponseQuery.h */,
+				8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */,
 			);
 			path = Kimono;
 			sourceTree = SOURCE_ROOT;
@@ -329,6 +334,7 @@
 			files = (
 				8D22F49919A2C98700BE9913 /* Kimono.m in Sources */,
 				8D22F4B219A2CAFB00BE9913 /* AFSecurityPolicy.m in Sources */,
+				8DD4F52019A6CB74001B8351 /* KimonoResponseQuery.m in Sources */,
 				8DD49D6E19A1B06800BAD8AF /* ViewController.m in Sources */,
 				8D22F4AF19A2CAFB00BE9913 /* AFHTTPRequestOperationManager.m in Sources */,
 				8D22F4B319A2CAFB00BE9913 /* AFURLConnectionOperation.m in Sources */,

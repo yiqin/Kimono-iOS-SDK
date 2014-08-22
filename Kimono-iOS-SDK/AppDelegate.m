@@ -16,32 +16,49 @@
     // Override point for customization after application launch.
     
     [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
-        
+    
     
     KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
     
     
-    
     [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
         NSLog(@"Success - Get Response");
-        // NSLog(@"New Data %u", kimonoResponseObject.newdata);
         
     } failure:^(NSError *error) {
         
     }];
-    
     
     
     [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
         NSLog(@"Success - Retrieve API");
-        // NSLog(@"Success cr: %u", kimonoResponseObject.crawlingenabled);
         
     } failure:^(NSError *error) {
         
     }];
     
     
+    [kimonoOperation listAllAPIsCompletionBlockWithSuccess:^(KimonoResponseQuery *kimonoResponseQuery) {
+        NSLog(@"Success - List All API");
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
+    
+    [kimonoOperation setTargeturl:@"http://challengepost.com/software/wish-it" success:^(KimonoResponseObject *newKimonoResponseObject) {
+        NSLog(@"Success - Set Target URL");
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
+    [kimonoOperation setFrequency:@"daily" success:^(KimonoResponseObject *newKimonoResponseObject) {
+        NSLog(@"Success - Set Frequency");
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
     
     

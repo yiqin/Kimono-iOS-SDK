@@ -8,6 +8,7 @@
 
 #import "Kimono.h"
 #import "KimonoResponseObject.h"
+#import "KimonoResponseQuery.h"
 
 @interface KimonoOperation : NSObject
 
@@ -52,18 +53,19 @@
 
 
 
-- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
+- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoResponseQuery *kimonoResponseQuery))success
                                       failure:(void (^)(NSError *error))failure;
 
-
-
+///////////
+// Setting
+///////////
 - (void)setTargeturl:(NSString *)targeturl
-             success:(void (^)(KimonoResponseObject *kimonoResponseObject))success
+             success:(void (^)(KimonoResponseObject *newKimonoResponseObject))success
              failure:(void (^)(NSError *error))failure;
 
 
 - (void)setFrequency:(NSString *)frequency
-             success:(void (^)(KimonoResponseObject *kimonoResponseObject))success
+             success:(void (^)(KimonoResponseObject *newKimonoResponseObject))success
              failure:(void (^)(NSError *error))failure;
 
 

@@ -14,7 +14,6 @@
 {
     self = [super init];
     if (self) {
-        
         self.apiid = [JSON objectForKey:@"id"];
         self.name = [JSON objectForKey:@"name"];
         self.targeturl = [JSON objectForKey:@"targeturl"];
@@ -32,9 +31,10 @@
         self.lastversion = [JSON objectForKey:@"lastversion"];
         self.version = [JSON objectForKey:@"version"];
         
-        self.newdata = [[JSON objectForKey:@"newdata"] boolValue];
-        self.meta = [[JSON objectForKey:@"meta"] boolValue];
-        self.online = [[JSON objectForKey:@"online"] boolValue];
+        
+        self.newdata = ([[JSON objectForKey:@"newdata"] boolValue]) ? YES: NO;
+        self.meta = ([[JSON objectForKey:@"meta"] boolValue]) ? YES : NO;
+        self.online = ([[JSON objectForKey:@"online"] boolValue]) ? YES : NO;
         
         self.webhookuris = [JSON objectForKey:@"webhookuris"];
         self.alertemails = [JSON objectForKey:@"alertemails"];
