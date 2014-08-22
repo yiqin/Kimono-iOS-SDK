@@ -7,8 +7,8 @@
 //
 
 #import "Kimono.h"
-#import "KimonoResponseObject.h"
-#import "KimonoResponseQuery.h"
+#import "KimonoObject.h"
+#import "KimonoQuery.h"
 
 @interface KimonoOperation : NSObject
 
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSString *apikey;
 
 
-@property (nonatomic, strong) KimonoResponseObject *responseObject;
+@property (nonatomic, strong) KimonoObject *apiobject;
 
 /*!
  Sets the applicationId and clientKey of your application.
@@ -39,7 +39,7 @@
  @param success Do something when it success.
  @param failure Failure
  */
-- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
+- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoObject *kimonoObject, NSDictionary *responseResults))success
                                       failure:(void (^)(NSError *error))failure;
 
 
@@ -48,24 +48,24 @@
  @param success Returns an Kimono object for the API that matches a specific id.
  @param failure Failure
  */
-- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoResponseObject *kimonoResponseObject))success
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoObject *kimonoObject))success
                                       failure:(void (^)(NSError *error))failure;
 
 
 
-- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoResponseQuery *kimonoResponseQuery))success
+- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoQuery *kimonoQuery))success
                                       failure:(void (^)(NSError *error))failure;
 
 ///////////
 // Setting
 ///////////
 - (void)setTargeturl:(NSString *)targeturl
-             success:(void (^)(KimonoResponseObject *newKimonoResponseObject))success
+             success:(void (^)(KimonoObject *newKimonoObject))success
              failure:(void (^)(NSError *error))failure;
 
 
 - (void)setFrequency:(NSString *)frequency
-             success:(void (^)(KimonoResponseObject *newKimonoResponseObject))success
+             success:(void (^)(KimonoObject *newKimonoObject))success
              failure:(void (^)(NSError *error))failure;
 
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 yiqin. All rights reserved.
 //
 
-#import "KimonoResponseQuery.h"
+#import "KimonoQuery.h"
 
-@implementation KimonoResponseQuery
+@implementation KimonoQuery
 
 - (instancetype)initWithJSON:(NSDictionary *)JSON
 {

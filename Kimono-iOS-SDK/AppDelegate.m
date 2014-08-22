@@ -21,7 +21,7 @@
     KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
     
     
-    [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
+    [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
         NSLog(@"Success - Get Response");
         
     } failure:^(NSError *error) {
@@ -29,7 +29,7 @@
     }];
     
     
-    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(KimonoResponseObject *kimonoResponseObject) {
+    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
         NSLog(@"Success - Retrieve API");
         
     } failure:^(NSError *error) {
@@ -37,7 +37,7 @@
     }];
     
     
-    [kimonoOperation listAllAPIsCompletionBlockWithSuccess:^(KimonoResponseQuery *kimonoResponseQuery) {
+    [kimonoOperation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
         NSLog(@"Success - List All API");
         
     } failure:^(NSError *error) {
@@ -45,7 +45,7 @@
     }];
     
     
-    [kimonoOperation setTargeturl:@"http://challengepost.com/software/wish-it" success:^(KimonoResponseObject *newKimonoResponseObject) {
+    [kimonoOperation setTargeturl:@"http://challengepost.com/software/wish-it" success:^(KimonoObject *newKimonoObject) {
         NSLog(@"Success - Set Target URL");
         
     } failure:^(NSError *error) {
@@ -53,7 +53,7 @@
     }];
     
     
-    [kimonoOperation setFrequency:@"daily" success:^(KimonoResponseObject *newKimonoResponseObject) {
+    [kimonoOperation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
         NSLog(@"Success - Set Frequency");
         
     } failure:^(NSError *error) {

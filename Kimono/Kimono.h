@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KimonoOperation.h"
-#import "KimonoResponseObject.h"
+#import "KimonoObject.h"
 
 @interface Kimono : NSObject
 

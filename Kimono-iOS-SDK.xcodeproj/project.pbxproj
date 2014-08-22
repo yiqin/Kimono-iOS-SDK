@@ -18,7 +18,7 @@
 		8D22F4B519A2CAFB00BE9913 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22F4AB19A2CAFB00BE9913 /* AFURLResponseSerialization.m */; };
 		8D22F4B619A2CAFB00BE9913 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22F4AD19A2CAFB00BE9913 /* AFURLSessionManager.m */; };
 		8D22F4BC19A2DB4600BE9913 /* KimonoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22F4BB19A2DB4600BE9913 /* KimonoOperation.m */; };
-		8D22F4BF19A30DF600BE9913 /* KimonoResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22F4BE19A30DF600BE9913 /* KimonoResponseObject.m */; };
+		8D22F4BF19A30DF600BE9913 /* KimonoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22F4BE19A30DF600BE9913 /* KimonoObject.m */; };
 		8DD49D5819A1B06800BAD8AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD49D5719A1B06800BAD8AF /* Foundation.framework */; };
 		8DD49D5A19A1B06800BAD8AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD49D5919A1B06800BAD8AF /* CoreGraphics.framework */; };
 		8DD49D5C19A1B06800BAD8AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD49D5B19A1B06800BAD8AF /* UIKit.framework */; };
@@ -33,7 +33,7 @@
 		8DD49D7919A1B06800BAD8AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD49D5B19A1B06800BAD8AF /* UIKit.framework */; };
 		8DD49D8119A1B06800BAD8AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DD49D7F19A1B06800BAD8AF /* InfoPlist.strings */; };
 		8DD49D8319A1B06800BAD8AF /* Kimono_iOS_SDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD49D8219A1B06800BAD8AF /* Kimono_iOS_SDKTests.m */; };
-		8DD4F52019A6CB74001B8351 /* KimonoResponseQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */; };
+		8DD4F52019A6CB74001B8351 /* KimonoQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4F51F19A6CB74001B8351 /* KimonoQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +70,8 @@
 		8D22F4AD19A2CAFB00BE9913 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		8D22F4BA19A2DB4600BE9913 /* KimonoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoOperation.h; sourceTree = "<group>"; };
 		8D22F4BB19A2DB4600BE9913 /* KimonoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoOperation.m; sourceTree = "<group>"; };
-		8D22F4BD19A30DF600BE9913 /* KimonoResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoResponseObject.h; sourceTree = "<group>"; };
-		8D22F4BE19A30DF600BE9913 /* KimonoResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoResponseObject.m; sourceTree = "<group>"; };
+		8D22F4BD19A30DF600BE9913 /* KimonoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoObject.h; sourceTree = "<group>"; };
+		8D22F4BE19A30DF600BE9913 /* KimonoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoObject.m; sourceTree = "<group>"; };
 		8DD49D5419A1B06800BAD8AF /* Kimono-iOS-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kimono-iOS-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD49D5719A1B06800BAD8AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DD49D5919A1B06800BAD8AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,8 +91,8 @@
 		8DD49D7E19A1B06800BAD8AF /* Kimono-iOS-SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kimono-iOS-SDKTests-Info.plist"; sourceTree = "<group>"; };
 		8DD49D8019A1B06800BAD8AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8DD49D8219A1B06800BAD8AF /* Kimono_iOS_SDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kimono_iOS_SDKTests.m; sourceTree = "<group>"; };
-		8DD4F51E19A6CB74001B8351 /* KimonoResponseQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoResponseQuery.h; sourceTree = "<group>"; };
-		8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoResponseQuery.m; sourceTree = "<group>"; };
+		8DD4F51E19A6CB74001B8351 /* KimonoQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KimonoQuery.h; sourceTree = "<group>"; };
+		8DD4F51F19A6CB74001B8351 /* KimonoQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KimonoQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +126,10 @@
 				8D22F49819A2C98700BE9913 /* Kimono.m */,
 				8D22F4BA19A2DB4600BE9913 /* KimonoOperation.h */,
 				8D22F4BB19A2DB4600BE9913 /* KimonoOperation.m */,
-				8D22F4BD19A30DF600BE9913 /* KimonoResponseObject.h */,
-				8D22F4BE19A30DF600BE9913 /* KimonoResponseObject.m */,
-				8DD4F51E19A6CB74001B8351 /* KimonoResponseQuery.h */,
-				8DD4F51F19A6CB74001B8351 /* KimonoResponseQuery.m */,
+				8D22F4BD19A30DF600BE9913 /* KimonoObject.h */,
+				8D22F4BE19A30DF600BE9913 /* KimonoObject.m */,
+				8DD4F51E19A6CB74001B8351 /* KimonoQuery.h */,
+				8DD4F51F19A6CB74001B8351 /* KimonoQuery.m */,
 			);
 			path = Kimono;
 			sourceTree = SOURCE_ROOT;
@@ -334,7 +334,7 @@
 			files = (
 				8D22F49919A2C98700BE9913 /* Kimono.m in Sources */,
 				8D22F4B219A2CAFB00BE9913 /* AFSecurityPolicy.m in Sources */,
-				8DD4F52019A6CB74001B8351 /* KimonoResponseQuery.m in Sources */,
+				8DD4F52019A6CB74001B8351 /* KimonoQuery.m in Sources */,
 				8DD49D6E19A1B06800BAD8AF /* ViewController.m in Sources */,
 				8D22F4AF19A2CAFB00BE9913 /* AFHTTPRequestOperationManager.m in Sources */,
 				8D22F4B319A2CAFB00BE9913 /* AFURLConnectionOperation.m in Sources */,
@@ -345,7 +345,7 @@
 				8D22F4B019A2CAFB00BE9913 /* AFHTTPSessionManager.m in Sources */,
 				8D22F4B119A2CAFB00BE9913 /* AFNetworkReachabilityManager.m in Sources */,
 				8D22F4B519A2CAFB00BE9913 /* AFURLResponseSerialization.m in Sources */,
-				8D22F4BF19A30DF600BE9913 /* KimonoResponseObject.m in Sources */,
+				8D22F4BF19A30DF600BE9913 /* KimonoObject.m in Sources */,
 				8D22F4B619A2CAFB00BE9913 /* AFURLSessionManager.m in Sources */,
 				8DD49D6419A1B06800BAD8AF /* main.m in Sources */,
 			);

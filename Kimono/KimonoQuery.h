@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KimonoResponseObject.h"
+#import "KimonoObject.h"
 
-@interface KimonoResponseQuery : NSObject
+@interface KimonoQuery : NSObject
 
 @property(nonatomic, strong) NSNumber *count;
 @property(nonatomic, strong) NSString *object;
