@@ -20,7 +20,7 @@
     
     KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
     
-    
+    /*
     [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
         NSLog(@"Success - Get Response");
         
@@ -60,7 +60,15 @@
         
     }];
     
+    */
     
+    [kimonoOperation getResponseFromTargeturl:@"http://challengepost.com/software/carebee" success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
+        NSLog(@"Success - Get Response from Targeturl");
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
     
      

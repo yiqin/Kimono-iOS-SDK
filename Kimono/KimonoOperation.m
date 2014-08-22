@@ -43,6 +43,23 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
+- (void)getResponseFromTargeturl:(NSString *)targeturl success:(void (^)(KimonoObject *, NSDictionary *))success failure:(void (^)(NSError *))failure
+{
+    __weak id weakSelf = self;
+    // set target url
+    [self setTargeturl:targeturl success:^(KimonoObject *updatedKimonoObject) {
+        // get Response
+       [weakSelf getResponseCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
+           success(kimonoObject, responseResults);
+           
+       } failure:^(NSError *error) {
+           
+       }];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 - (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoObject *))success failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/kimonoapis/%@?apikey=%@", kimonoURL, self.apiid,self.apikey];

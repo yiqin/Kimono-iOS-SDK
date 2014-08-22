@@ -42,6 +42,15 @@
 - (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoObject *kimonoObject, NSDictionary *responseResults))success
                                       failure:(void (^)(NSError *error))failure;
 
+/*!
+ Sends an API request and gets a Kimono API response with the target url. The target url is updated.
+ @param targeturl Target url from which the API extracts data
+ @param success Do something when it success.
+ @param failure Failure
+ */
+- (void)getResponseFromTargeturl:(NSString *)targeturl
+                         success:(void (^)(KimonoObject *newKimonoObject, NSDictionary *responseResults))success
+                         failure:(void (^)(NSError *error))failure;
 
 /*!
  Send an API request
@@ -60,12 +69,12 @@
 // Setting
 ///////////
 - (void)setTargeturl:(NSString *)targeturl
-             success:(void (^)(KimonoObject *newKimonoObject))success
+             success:(void (^)(KimonoObject *updatedKimonoObject))success
              failure:(void (^)(NSError *error))failure;
 
 
 - (void)setFrequency:(NSString *)frequency
-             success:(void (^)(KimonoObject *newKimonoObject))success
+             success:(void (^)(KimonoObject *updatedKimonoObject))success
              failure:(void (^)(NSError *error))failure;
 
 
