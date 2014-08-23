@@ -1,7 +1,7 @@
 # Kimono iOS SDK
-* *
+*Turn websites data into iOS apps in seconds*
 
-Long introduction
+Kimono iOS SDK provides easy programmatic access to Kimono APIs. 
 
 > For more information about how to use Kimono iOS SDK, check out [this article](http://www.yiqin.info/).
 
@@ -20,71 +20,69 @@ Kimono iOS SDK is built based on **AFNetworking**. You can simply drag the `AFNe
 
 ### Get Kimono API Data
 ```Objective-C
-    [operation getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
-        NSLog(@"Success - Get Data");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+[operation getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
+    NSLog(@"Success - Get Data");
+    
+} failure:^(NSError *error) {
+    
+}];
 ```
 
 ### Get Kimono API Data with Target URL
 ```Objective-C
-	// Set your target url here.
-    NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
+// Set your target url here.
+NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
+
+[operation getDataFromTargeturl:targeturl success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
+    NSLog(@"Success - Get Data from Targeturl");
     
-    [operation getDataFromTargeturl:targeturl success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
-        NSLog(@"Success - Get Data from Targeturl");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+} failure:^(NSError *error) {
+    
+}];
 ```
 
 ### Retrieve an API
 ```Objective-C
-    [operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
-        NSLog(@"Success - Retrieve API");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+[operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
+    NSLog(@"Success - Retrieve API");
+    
+} failure:^(NSError *error) {
+    
+}];
 ```
 
 ### List All APIs
 ```Objective-C
-    [operation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
-        NSLog(@"Success - List All API");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+[operation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
+    NSLog(@"Success - List All API");
+    
+} failure:^(NSError *error) {
+    
+}];
 ```
 
 ### Set Target URL
 ```Objective-C
-    // Set your target url here.
-    NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
+// Set your target url here.
+NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
+
+[operation setTargeturl:targeturl success:^(KimonoObject *newKimonoObject) {
+    NSLog(@"Success - Set Target URL");
     
-    [operation setTargeturl:targeturl success:^(KimonoObject *newKimonoObject) {
-        NSLog(@"Success - Set Target URL");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+} failure:^(NSError *error) {
+    
+}];
 ```
 
 ### Set Frequency
 ```Objective-C
-    [operation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
-        NSLog(@"Success - Set Frequency");
-        
-    } failure:^(NSError *error) {
-        
-    }];
+[operation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
+    NSLog(@"Success - Set Frequency");
+    
+} failure:^(NSError *error) {
+    
+}];
 ```
-
-
 
 
 ---
