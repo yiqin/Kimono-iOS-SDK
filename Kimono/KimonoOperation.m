@@ -13,13 +13,18 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
 
 @implementation KimonoOperation
 
++ (instancetype)createWithAPIId:(NSString *)apiid
+{
+    return [[self alloc] initWithAPIId:apiid];
+}
+
 - (instancetype)initWithAPIId:(NSString *)apiid
 {
     self = [super init];
     if (self) {
         self.apiid = apiid;
         self.apikey = [Kimono getAPIKey];
-        self.apiobject = [[KimonoObject alloc] init];
+        self.response = [[KimonoObject alloc] init];
     }
     return self;
 }
@@ -36,7 +41,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         KimonoObject *kimonoObject = [[KimonoObject alloc] initWithJSON:responseObject];
         NSDictionary *responseResults = kimonoObject.results;
-        self.apiobject = kimonoObject;
+        self.response = kimonoObject;
         success(kimonoObject, responseResults);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -74,7 +79,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     
     [operationManager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         KimonoObject *kimonoObject = [[KimonoObject alloc] initWithJSON:responseObject];
-        self.apiobject = kimonoObject;
+        self.response = kimonoObject;
         success(kimonoObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -116,7 +121,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
         BOOL isWrong = [[responseObject objectForKey:@"error"] boolValue];
         if (!isWrong) {
             KimonoObject *kimonoObject = [[KimonoObject alloc] initWithJSON:[responseObject objectForKey:@"api"]];
-            self.apiobject = kimonoObject;
+            self.response = kimonoObject;
             success(kimonoObject);
         }
         
@@ -141,7 +146,7 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
         BOOL isWrong = [[responseObject objectForKey:@"error"] boolValue];
         if (!isWrong) {
             KimonoObject *kimonoObject = [[KimonoObject alloc] initWithJSON:[responseObject objectForKey:@"api"]];
-            self.apiobject = kimonoObject;
+            self.response = kimonoObject;
             success(kimonoObject);
         }
         

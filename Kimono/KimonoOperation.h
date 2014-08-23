@@ -25,9 +25,16 @@
 @property (nonatomic, strong) NSString *apikey;
 
 /*!
- Kimono API Object
+ The last Kimono API response received by the operation’s connection.
  */
-@property (nonatomic, strong) KimonoObject *apiobject;
+@property (nonatomic, strong) KimonoObject *response;
+
+/*!
+ Sets the applicationId and clientKey of your application.
+ @param applicationId The application id for your Parse application.
+ @param clientKey The client key for your Parse application.
+ */
++ (instancetype)createWithAPIId:(NSString *)apiid;
 
 /*!
  Sets the applicationId and clientKey of your application.

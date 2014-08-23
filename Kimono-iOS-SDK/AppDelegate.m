@@ -15,11 +15,12 @@
 {
     // Override point for customization after application launch.
     
-    [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
+    NSString *yourAPIKey = @"8541e9ff8ff5291b4d84b9f75550c9b8";
+    [Kimono setAPIKey:yourAPIKey];
     
     
-    KimonoOperation *operation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
-    
+    NSString *yourAPIId = @"2wwctra6";
+    KimonoOperation *operation = [KimonoOperation createWithAPIId:yourAPIId];
     
     [operation getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
         NSLog(@"Success - Get Data");
@@ -62,14 +63,14 @@
         
     }];
     
-    
+    /*
     [operation getDataFromTargeturl:targeturl success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
         NSLog(@"Success - Get Data from Targeturl");
         
     } failure:^(NSError *error) {
         
     }];
-    
+    */
     
      
     return YES;
