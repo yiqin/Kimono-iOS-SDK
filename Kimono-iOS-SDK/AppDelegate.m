@@ -18,18 +18,18 @@
     [Kimono setAPIKey:@"8541e9ff8ff5291b4d84b9f75550c9b8"];
     
     
-    KimonoOperation *kimonoOperation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
+    KimonoOperation *operation = [[KimonoOperation alloc] initWithAPIId:@"2wwctra6"];
     
-    /*
-    [kimonoOperation getResponseCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
-        NSLog(@"Success - Get Response");
+    
+    [operation getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
+        NSLog(@"Success - Get Data");
         
     } failure:^(NSError *error) {
         
     }];
     
     
-    [kimonoOperation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
+    [operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
         NSLog(@"Success - Retrieve API");
         
     } failure:^(NSError *error) {
@@ -37,7 +37,7 @@
     }];
     
     
-    [kimonoOperation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
+    [operation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
         NSLog(@"Success - List All API");
         
     } failure:^(NSError *error) {
@@ -45,7 +45,9 @@
     }];
     
     
-    [kimonoOperation setTargeturl:@"http://challengepost.com/software/wish-it" success:^(KimonoObject *newKimonoObject) {
+    NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
+    
+    [operation setTargeturl:targeturl success:^(KimonoObject *newKimonoObject) {
         NSLog(@"Success - Set Target URL");
         
     } failure:^(NSError *error) {
@@ -53,18 +55,16 @@
     }];
     
     
-    [kimonoOperation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
+    [operation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
         NSLog(@"Success - Set Frequency");
         
     } failure:^(NSError *error) {
         
     }];
     
-    */
     
-    [kimonoOperation getResponseFromTargeturl:@"http://challengepost.com/software/carebee" success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
-        NSLog(@"Success - Get Response from Targeturl");
-        
+    [operation getDataFromTargeturl:targeturl success:^(KimonoObject *newKimonoObject, NSDictionary *responseResults) {
+        NSLog(@"Success - Get Data from Targeturl");
         
     } failure:^(NSError *error) {
         

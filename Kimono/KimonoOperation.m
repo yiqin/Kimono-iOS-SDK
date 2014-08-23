@@ -24,7 +24,8 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     return self;
 }
 
-- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoObject *, NSDictionary *))success failure:(void (^)(NSError *))failure
+- (void)getDataCompletionBlockWithSuccess:(void (^)(KimonoObject *, NSDictionary *))success
+                                  failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/api/%@?apikey=%@", kimonoURL, self.apiid,self.apikey];
     
@@ -43,13 +44,15 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
-- (void)getResponseFromTargeturl:(NSString *)targeturl success:(void (^)(KimonoObject *, NSDictionary *))success failure:(void (^)(NSError *))failure
+- (void)getDataFromTargeturl:(NSString *)targeturl
+                     success:(void (^)(KimonoObject *, NSDictionary *))success
+                     failure:(void (^)(NSError *))failure
 {
     __weak id weakSelf = self;
     // set target url
     [self setTargeturl:targeturl success:^(KimonoObject *updatedKimonoObject) {
         // get Response
-       [weakSelf getResponseCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
+       [weakSelf getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
            success(kimonoObject, responseResults);
            
        } failure:^(NSError *error) {
@@ -60,7 +63,8 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
-- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoObject *))success failure:(void (^)(NSError *))failure
+- (void)retrieveAPICompletionBlockWithSuccess:(void (^)(KimonoObject *))success
+                                      failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/kimonoapis/%@?apikey=%@", kimonoURL, self.apiid,self.apikey];
     
@@ -78,7 +82,8 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
-- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoQuery *))success failure:(void (^)(NSError *))failure
+- (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoQuery *))success
+                                      failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/kimonoapis?apikey=%@", kimonoURL, self.apikey];
     
@@ -95,7 +100,9 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
-- (void)setTargeturl:(NSString *)targeturl success:(void (^)(KimonoObject *))success failure:(void (^)(NSError *))failure
+- (void)setTargeturl:(NSString *)targeturl
+             success:(void (^)(KimonoObject *))success
+             failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/kimonoapis/%@/update", kimonoURL, self.apiid];
     NSDictionary *parameters = @{@"apikey": self.apikey,
@@ -118,7 +125,9 @@ static NSString * const kimonoURL = @"https://www.kimonolabs.com";
     }];
 }
 
-- (void)setFrequency:(NSString *)frequency success:(void (^)(KimonoObject *))success failure:(void (^)(NSError *))failure
+- (void)setFrequency:(NSString *)frequency
+             success:(void (^)(KimonoObject *))success
+             failure:(void (^)(NSError *))failure
 {
     NSString *path = [NSString stringWithFormat:@"%@/kimonoapis/%@/update", kimonoURL, self.apiid];
     NSDictionary *parameters = @{@"apikey": self.apikey,

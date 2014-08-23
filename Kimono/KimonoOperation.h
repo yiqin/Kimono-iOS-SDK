@@ -15,7 +15,7 @@
 // @property (nonatomic, strong) NSString *KimonoURL;
 
 /*!
- Kimono apiid
+ Kimono API_ID
  */
 @property (nonatomic, strong) NSString *apiid;
 
@@ -24,7 +24,9 @@
  */
 @property (nonatomic, strong) NSString *apikey;
 
-
+/*!
+ Kimono API Object
+ */
 @property (nonatomic, strong) KimonoObject *apiobject;
 
 /*!
@@ -36,10 +38,10 @@
 
 /*!
  Sends an API request and gets a Kimono API response.
- @param success Do something when it success.
- @param failure Failure
+ @param success The block to be executed on the completion of a successful request.
+ @param failure The block to be executed on the completion of a unsuccessful request.
  */
-- (void)getResponseCompletionBlockWithSuccess:(void (^)(KimonoObject *kimonoObject, NSDictionary *responseResults))success
+- (void)getDataCompletionBlockWithSuccess:(void (^)(KimonoObject *kimonoObject, NSDictionary *responseResults))success
                                       failure:(void (^)(NSError *error))failure;
 
 /*!
@@ -48,9 +50,9 @@
  @param success Do something when it success.
  @param failure Failure
  */
-- (void)getResponseFromTargeturl:(NSString *)targeturl
-                         success:(void (^)(KimonoObject *newKimonoObject, NSDictionary *responseResults))success
-                         failure:(void (^)(NSError *error))failure;
+- (void)getDataFromTargeturl:(NSString *)targeturl
+                     success:(void (^)(KimonoObject *newKimonoObject, NSDictionary *responseResults))success
+                     failure:(void (^)(NSError *error))failure;
 
 /*!
  Send an API request
@@ -65,9 +67,7 @@
 - (void)listAllAPIsCompletionBlockWithSuccess:(void (^)(KimonoQuery *kimonoQuery))success
                                       failure:(void (^)(NSError *error))failure;
 
-///////////
-// Setting
-///////////
+
 - (void)setTargeturl:(NSString *)targeturl
              success:(void (^)(KimonoObject *updatedKimonoObject))success
              failure:(void (^)(NSError *error))failure;
