@@ -15,8 +15,28 @@ Kimono
 ## Installation
 Kimono iOS SDK is built based on **AFNetworking**. You can simply drag the `AFNetworking` foler and `Kimono` folder into your Xcode project.
 
+## Initializing the SDK
+To start to use Kimono, you must first initialize it with your api key. You can find in your settings on the [Kimono website](https://www.kimonolabs.com/).
+
+Open up your `AppDelegate.m` file and add the following import to the top of the file:
+```Objective-C
+#import "Kimono.h"
+```
+Then call `setAPIKey:` inside the `application:didFinishLaunchingWithOptions:` function:
+```Objective-C
+NSString *yourAPIKey = @"8541e9ff8ff5291b4d84b9f75550c9b8";
+[Kimono setAPIKey:yourAPIKey];
+```
+
 ---
 ## Usage
+Once you've initilized Kimono, you can make an API request now.
+
+### Create a Kimono Operation
+```Objective-C
+NSString *yourAPIId = @"2wwctra6";
+KimonoOperation *operation = [KimonoOperation createWithAPIId:yourAPIId];
+```
 
 ### Get Kimono API Data
 ```Objective-C
@@ -97,7 +117,8 @@ Instants Methods
 ### KimonoOperation
 
 Properties
-- `appid`
+- `@property (nonatomic, strong) NSString *apiid;`
+
 - `apikey`
 - `apiobject`
 
