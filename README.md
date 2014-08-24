@@ -1,9 +1,19 @@
 # Kimono iOS SDK
 *Get websites data into iOS apps in seconds*
 
+---
+## What is Kimono
+Kimono lets you turn websites into structured APIs from your brower in seconds. You don't need to write any code or install any software to extract data with Kimono. The easiest way to use Kimono is to add our bookmarklet to your browser's bookmark bar. Then go to the website you want to get data from and click the bookmarklet. Select the data you want and Kimono does the rest. Kimono takes care of hosting the APIs that you build and running them on the schedule you specify. Use the API output in JSON or as CSV files that you can easily paste into a spreadsheet. 
+
+> Check out [Kimono](https://www.kimonolabs.com/).
+
+---
+## What does Kimono iOS SDK do
 Kimono iOS SDK is the most powerful way to make a Kimono API call in iOS. You can easily extract live data from websites using Kimono without writing any code. Kimono iOS SDK helps you get data into the native iOS apps quickly. It totally eliminates the need for writing web scraping for your iOS development.
 
 > For more information about how to use Kimono iOS SDK, check out [this article](http://www.yiqin.info/).
+
+
 
 ---
 ## Requirements
@@ -13,7 +23,7 @@ Kimono iOS SDK is the most powerful way to make a Kimono API call in iOS. You ca
 ---
 
 ## Installation
-Kimono iOS SDK is built on top of the **[AFNetworking](http://afnetworking.com/)**,  a delightful iOS and OSX networking framework. You can simply drag the `AFNetworking` foler and `Kimono` folder into your Xcode project.
+Kimono iOS SDK is built on top of the [AFNetworking](http://afnetworking.com/),  a delightful iOS and OSX networking framework. You can simply drag the `AFNetworking` foler and `Kimono` folder into your Xcode project.
 
 ---
 
@@ -98,7 +108,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Retrieve an API
-Retrive a Kimono object for the API that matches the specific API id.
+Retrives a Kimono object for the API that matches the specific API id.
 ```Objective-C
 [operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
     NSLog(@"Success - Retrieve API");
@@ -109,7 +119,7 @@ Retrive a Kimono object for the API that matches the specific API id.
 ```
 
 ### List All APIs
-Get a list of all APIs for the specified user.
+Gets a list of all APIs for the specified user.
 ```Objective-C
 [operation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
     NSLog(@"Success - List All API");
@@ -120,7 +130,7 @@ Get a list of all APIs for the specified user.
 ```
 
 ### Set Target URL
-Set the target url for the API. If successful, it returns the new Kimono object for the API.
+Sets the target url for the API. If successful, it returns the new Kimono object for the API.
 ```Objective-C
 // Set your target url here.
 NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
@@ -134,7 +144,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Set Frequency
-Set the update frequency for the API. If successful, it returns the new Kimono object for the API.
+Sets the update frequency for the API. If successful, it returns the new Kimono object for the API.
 ```Objective-C
 [operation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
     NSLog(@"Success - Set Frequency");
