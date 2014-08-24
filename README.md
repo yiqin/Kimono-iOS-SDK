@@ -57,7 +57,7 @@ Once you've initilized Kimono, you can create a Kimono operation and make an API
 | `online`          |whether or not the API is set to run on automatically on a schedule|
 | `webhookuris`     |list of urls to which the API posts successfully fetched of new data|
 | `alerteamils`     |list of email address to which the API posts successfully fetched of new data|
-| `collectionnames`| |list of names of the collections contained in the results object when calling the API endpoint|
+| `collectionnames` |list of names of the collections contained in the results object when calling the API endpoint|
 | `count`           |the number you called the API|
 | `results`         |the response results (`NSDictionary` Class) of the API|
 
