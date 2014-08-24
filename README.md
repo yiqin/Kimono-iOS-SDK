@@ -39,32 +39,31 @@ Once you've initilized Kimono, you can create a Kimono operation and make an API
 `KimonoObject` is a local representation of data that contains metadata about the API. Response data is built about the `KimonoObject`. This is the main class that is used to interact with data in your app.
 
 | property          | name |
-| ------------- | ----------- |
+| :------------- | :----------- |
 | `apiid`           |unique 8 character identifier for the API |
 | `name`            |user defined name for the API |
-
-- `targeturl`       target url from which the API extracts data
-- `frequency`       frequnecy with kimono fetaches new data
-- `crawlingenabled` whether or not pagination/targeted crawling is enabled
-- `instructions`
-- `lastrun`
-- `lastsuccess`
-- `thisversionrun`
-- `nextrun`
-- `lastrunstatus`
-- `lastversion`
-- `version`
-- `newdata`
-- `meta`
-- `online`
-- `webhookuris`
-- `alerteamils`
-- `count`
-- `results`
+| `targeturl`       |target url from which the API extracts data|
+| `frequency`       |frequnecy with kimono fetaches new data|
+| `crawlingenabled` |whether or not pagination/targeted crawling is enabled|
+| `instructions`    |list of urls and maximum number of pages to visit|
+| `lastrun`         |the last time kimono attempted to fecth data|
+| `lastsuccess`     |the last time kimono successfully fetched data|
+| `lastrunstatus`   |result status for the last attempted run|
+| `nextrun`         |the next time kimono will attempt to fecth data|
+| `version`         |version number of the result set|
+| `lastversion`     |version number of this particular result set|
+| `newdata`         |version number of this particular result set|
+| `meta`            |whether or not the most recent fetch of this data returned results different from the last time you called this API|
+| `online`          |whether or not the API is set to run on automatically on a schedule|
+| `webhookuris`     |list of urls to which the API posts successfully fetched of new data|
+| `alerteamils`     |list of email address to which the API posts successfully fetched of new data|
+| `collectionnames`| |list of names of the collections contained in the results object when calling the API endpoint|
+| `count`           |the number you called the API|
+| `results`         |the response results (`NSDictionary` Class) of the API|
 
 
 ### Kimono Operation
-`KimonoOperation` encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings.
+`KimonoOperation` encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings. Instant methods have the property with a block that executes either the success or failure block. If `error` returns a value, which can be caused by an unacceptable status code, then `failure` is executed. Otherwise, success is executed.
 
 ### Create a Kimono Operation
 ```Objective-C
@@ -140,25 +139,6 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 }];
 ```
 
-
----
-## Inventory
-
-### Kimono
-
-Instants Methods
-- `+ (void)setAPIKey:(NSString *) KimonoAPIKey;`
-- `+ (NSString *)getAPIKey;`
-
-### KimonoOperation
-
-Properties
-- `@property (nonatomic, strong) NSString *apiid;`
-
-- `apikey`
-- `apiobject`
-
-
 ---
 
 ## Communication
@@ -176,4 +156,5 @@ Properties
 Yi Qin
 
 - http://github.com/yiqin
+- http://twitter.com/YiQin1
 - http://yiqin.info
