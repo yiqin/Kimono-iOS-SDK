@@ -63,7 +63,7 @@ Once you've initilized Kimono, you can create a Kimono operation and make an API
 
 
 ### Kimono Operation
-`KimonoOperation` encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings. Instant methods have the property with a block that executes either the success or failure block. If `error` returns a value, which can be caused by an unacceptable status code, then `failure` is executed. Otherwise, success is executed.
+`KimonoOperation` encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings. It contains instant methods that have the property with a block that executes either `success` or `failure`. If `error` returns a value, which can be caused by an unacceptable status code, then `failure` is executed. Otherwise, `success` is executed.
 
 ### Create a Kimono Operation
 ```Objective-C
@@ -73,6 +73,7 @@ KimonoOperation *operation = [KimonoOperation createWithAPIId:yourAPIId];
 ```
 
 ### Get Kimono API Data
+Sends an API request and gets a Kimono API response.
 ```Objective-C
 [operation getDataCompletionBlockWithSuccess:^(KimonoObject *kimonoObject, NSDictionary *responseResults) {
     NSLog(@"Success - Get Data");
@@ -83,6 +84,7 @@ KimonoOperation *operation = [KimonoOperation createWithAPIId:yourAPIId];
 ```
 
 ### Get Kimono API Data with Target URL
+Sends an API request and gets a Kimono API response with the target url. The target url is updated.
 ```Objective-C
 // Set your target url here.
 NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
@@ -96,7 +98,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Retrieve an API
-
+Retrive a Kimono object for the API that matches the specific API id.
 ```Objective-C
 [operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
     NSLog(@"Success - Retrieve API");
@@ -107,6 +109,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### List All APIs
+Get a list of all APIs for the specified user.
 ```Objective-C
 [operation listAllAPIsCompletionBlockWithSuccess:^(KimonoQuery *kimonoQuery) {
     NSLog(@"Success - List All API");
@@ -117,6 +120,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Set Target URL
+Set the target url for the API. If successful, it returns the new Kimono object for the API.
 ```Objective-C
 // Set your target url here.
 NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
@@ -130,6 +134,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Set Frequency
+Set the update frequency for the API. If successful, it returns the new Kimono object for the API.
 ```Objective-C
 [operation setFrequency:@"daily" success:^(KimonoObject *newKimonoObject) {
     NSLog(@"Success - Set Frequency");
