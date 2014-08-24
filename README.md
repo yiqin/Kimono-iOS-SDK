@@ -1,7 +1,7 @@
 # Kimono iOS SDK
-*Turn websites data into iOS apps in seconds*
+*Get websites data into iOS apps in seconds*
 
-Kimono 
+Kimono iOS SDK is the most powerful way to make a Kimono API call in iOS. You can easily extract live data from websites using Kimono without writing any code. Kimono iOS SDK helps you get data into the native iOS apps quickly. It totally eliminates the need for writing web scraping for your iOS development.
 
 > For more information about how to use Kimono iOS SDK, check out [this article](http://www.yiqin.info/).
 
@@ -13,10 +13,12 @@ Kimono
 ---
 
 ## Installation
-Kimono iOS SDK is built based on **AFNetworking**. You can simply drag the `AFNetworking` foler and `Kimono` folder into your Xcode project.
+Kimono iOS SDK is built on top of the **[AFNetworking](http://afnetworking.com/)**,  a delightful iOS and OSX networking framework. You can simply drag the `AFNetworking` foler and `Kimono` folder into your Xcode project.
+
+---
 
 ## Initializing the SDK
-To start to use Kimono, you must first initialize it with your api key. You can find in your settings on the [Kimono website](https://www.kimonolabs.com/).
+To start to use Kimono, you must first initialize it with your api key. You can find it in your APIs settings on the [Kimono website](https://www.kimonolabs.com/).
 
 Open up your `AppDelegate.m` file and add the following import to the top of the file:
 ```Objective-C
@@ -24,16 +26,24 @@ Open up your `AppDelegate.m` file and add the following import to the top of the
 ```
 Then call `setAPIKey:` inside the `application:didFinishLaunchingWithOptions:` function:
 ```Objective-C
+// Set your api key here.
 NSString *yourAPIKey = @"8541e9ff8ff5291b4d84b9f75550c9b8";
 [Kimono setAPIKey:yourAPIKey];
 ```
 
 ---
 ## Usage
-Once you've initilized Kimono, you can make an API request now.
+Once you've initilized Kimono, you can create a Kimono operation and make an API request.
+
+### Kimono Object
+A Kimono Object is a local representation of data that contains metadata about the API. This is the main class that is used to interact with data in your app.
+
+### Kimono Operation
+A Kimono operation encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings.
 
 ### Create a Kimono Operation
 ```Objective-C
+// Set your api id here.
 NSString *yourAPIId = @"2wwctra6";
 KimonoOperation *operation = [KimonoOperation createWithAPIId:yourAPIId];
 ```
@@ -62,6 +72,7 @@ NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
 ```
 
 ### Retrieve an API
+
 ```Objective-C
 [operation retrieveAPICompletionBlockWithSuccess:^(KimonoObject *kimonoObject) {
     NSLog(@"Success - Retrieve API");
@@ -135,7 +146,7 @@ Properties
 
 ---
 
-## Contact
+## Contact & Maintainers
 
 Yi Qin
 
