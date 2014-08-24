@@ -36,10 +36,35 @@ NSString *yourAPIKey = @"8541e9ff8ff5291b4d84b9f75550c9b8";
 Once you've initilized Kimono, you can create a Kimono operation and make an API request.
 
 ### Kimono Object
-A Kimono Object is a local representation of data that contains metadata about the API. This is the main class that is used to interact with data in your app.
+`KimonoObject` is a local representation of data that contains metadata about the API. Response data is built about the `KimonoObject`. This is the main class that is used to interact with data in your app.
+
+| property          | name |
+| ------------- | ----------- |
+| `apiid`           |unique 8 character identifier for the API |
+| `name`            |user defined name for the API |
+
+- `targeturl`       target url from which the API extracts data
+- `frequency`       frequnecy with kimono fetaches new data
+- `crawlingenabled` whether or not pagination/targeted crawling is enabled
+- `instructions`
+- `lastrun`
+- `lastsuccess`
+- `thisversionrun`
+- `nextrun`
+- `lastrunstatus`
+- `lastversion`
+- `version`
+- `newdata`
+- `meta`
+- `online`
+- `webhookuris`
+- `alerteamils`
+- `count`
+- `results`
+
 
 ### Kimono Operation
-A Kimono operation encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings.
+`KimonoOperation` encapsulates the common patterns of communicating with Kimono, including getting data, retrieving an API, and updating API settings.
 
 ### Create a Kimono Operation
 ```Objective-C
