@@ -45,7 +45,7 @@
         
     }];
     
-    
+    // Use Reddit as example.
     NSString *targeturl = @"http://www.mywebsite.com/products/3467721";
     
     [operation setTargeturl:targeturl success:^(KimonoObject *newKimonoObject) {
