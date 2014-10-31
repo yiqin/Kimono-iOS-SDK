@@ -14,7 +14,7 @@
 
 /*!
  Sets the applicationId and clientKey of your application.
- @param KimonoAPIKey The application id for your Parse application.
+ @param KimonoAPIKey The application id for your Kimono application.
  */
 + (void)setAPIKey:(NSString *) KimonoAPIKey;
 + (NSString *)getAPIKey;
